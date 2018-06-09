@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Vehiculo">
+    <insert id="insertarVehiculo" parameterType="servicios.pojos.Vehiculo">
+        INSERT INTO vehiculo (placas, anio, color, numPoliza, idAseguradora, idMarca, numLicencia)
+        VALUES (#{placas},#{anio},#{color},#{numPoliza},#{idAseguradora},#{idMarca},#{numLicencia});
+    </insert>
+    
+    <select id="obtenerVehiculos" parameterType="String" resultType="servicios.pojos.Vehiculo">
+        SELECT * FROM Vehiculo 
+        WHERE numLicencia = #{numLicencia};
+    </select>
+    
+    <delete id="eliminarVehiculo" parameterType="String">
+        DELETE FROM Vehiculo where placas = #{placas}; 
+    </delete>
+    
+    <update id="actualizarVehiculo" parameterType="servicios.pojos.Vehiculo">
+        UPDATE Vehiculo SET descripcion = #{descripcion} 
+        WHERE idNota = #{idNota};
+    </update>
+</mapper>

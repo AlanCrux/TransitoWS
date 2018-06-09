@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Conductor">
+    <insert id="insertarConductor" parameterType="servicios.pojos.Conductor">
+        INSERT INTO Conductor (numLicencia, nombre, apPaterno, apMaterno, fechaNacimiento, celular, clave)
+        VALUES (#{numLicencia},#{nombre},#{apPaterno},#{apMaterno}, #{fechaNacimiento}, #{celular}, #{clave});
+    </insert>
+    
+    <select id="autenticarConductor" resultType="servicios.pojos.Conductor" parameterType="servicios.pojos.Conductor">
+        SELECT * FROM Conductor 
+        WHERE celular = #{celular} AND clave = #{clave}; 
+    </select>
+    
+    <delete id="eliminarConductor" parameterType="String">
+        DELETE FROM Conductor where numLicencia = #{numLicencia}; 
+    </delete>
+    
+    <update id="actualizarConductor" parameterType="servicios.pojos.Conductor">
+        UPDATE Conductor SET nombre = #{nombre}, apPaterno = #{apPaterno}, apMaterno = #{apMaterno},
+        fechaNacimiento = {fechaNacimiento}, celular = #{celular}, clave = #{clave}
+        WHERE numLicencia = #{numLicencia};
+    </update>
+</mapper>

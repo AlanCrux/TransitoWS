@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Evidencia">
+    <insert id="insertarEvidencia" parameterType="servicios.pojos.Evidencia">
+        INSERT INTO Evidencia (fotografia,fechaHora)
+        VALUES (#{(fotografia},#{fechaHora});
+    </insert>
+    
+    <select id="obtenerEvidencia" parameterType="String" resultType="servicios.pojos.Evidencia">
+        SELECT * FROM Evidencia
+        WHERE idEvidencia = #{idEvidencia};
+    </select>
+    
+    <delete id="eliminarEvidencia" parameterType="String">
+        DELETE FROM Evidencia where idEvidencia = #{idEvidencia}; 
+    </delete>
+    
+    <update id="actualizarEvidencia" parameterType="servicios.pojos.Evidencia">
+        UPDATE Evidencia SET fotografia = #{fotografia}, fechaHora = #{fechaHora}
+        WHERE idEvidencia = #{idEvidencia};
+    </update>
+</mapper>

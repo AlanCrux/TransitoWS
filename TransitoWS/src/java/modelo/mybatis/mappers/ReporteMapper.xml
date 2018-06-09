@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Reporte">
+    <insert id="insertarReporte" parameterType="servicios.pojos.Reporte">
+        INSERT INTO Reporte (folioReporte, placas, latitud, longitud, nombreConductor, fechaHora, placas1)
+        VALUES (#{(folioReporte},#{placas},#{latitutd},#{longitud},#{nombreConductor},#{fechaHora},#{placas1});
+    </insert>
+    
+    <select id="obtenerReporte" parameterType="String" resultType="servicios.pojos.Reporte">
+        SELECT * FROM Reporte
+        WHERE folioReporte = #{folioReporte};
+    </select>
+    
+    <delete id="eliminarReporte" parameterType="String">
+        DELETE FROM Reporte where folioReporte = #{folioReporte}; 
+    </delete>
+    
+    <update id="actualizarReporte" parameterType="servicios.pojos.Reporte">
+        UPDATE Reporte SET placas = #{placas}, latitud = #{latitud}, longitud = #{longitud},
+        nombreConductor = #{nombreConductor}, fechaHora = #{fechaHora}, placas1 = #{placas1}
+        WHERE folioReporte = #{folioReporte};
+    </update>
+</mapper>
