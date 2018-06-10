@@ -11,6 +11,7 @@ public class Conductor {
     private Date fechaNacimiento;
     private String celular;
     private String clave;
+    private boolean verificado;
 
     public Conductor() {
     }
@@ -24,6 +25,16 @@ public class Conductor {
         this.celular = celular;
         this.clave = clave;
     }
+
+    public boolean isVerificado() {
+        return verificado;
+    }
+
+    public void setVerificado(boolean verificado) {
+        this.verificado = verificado;
+    }
+    
+    
 
     public String getNumLicencia() {
         return numLicencia;

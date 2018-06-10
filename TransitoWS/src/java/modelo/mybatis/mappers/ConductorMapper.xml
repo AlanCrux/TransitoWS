@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="Conductor">
     <insert id="insertarConductor" parameterType="servicios.pojos.Conductor">
-        INSERT INTO Conductor (numLicencia, nombre, apPaterno, apMaterno, fechaNacimiento, celular, clave)
-        VALUES (#{numLicencia},#{nombre},#{apPaterno},#{apMaterno}, #{fechaNacimiento}, #{celular}, #{clave});
+        INSERT INTO Conductor (numLicencia, nombre, fechaNacimiento, celular, clave, verficado)
+        VALUES (#{numLicencia},#{nombre}, #{fechaNacimiento}, #{celular}, #{clave},#{verificado});
     </insert>
     
     <select id="autenticarConductor" resultType="servicios.pojos.Conductor" parameterType="servicios.pojos.Conductor">
@@ -20,8 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </delete>
     
     <update id="actualizarConductor" parameterType="servicios.pojos.Conductor">
-        UPDATE Conductor SET nombre = #{nombre}, apPaterno = #{apPaterno}, apMaterno = #{apMaterno},
-        fechaNacimiento = {fechaNacimiento}, celular = #{celular}, clave = #{clave}
+        UPDATE Conductor SET nombre = #{nombre},
+        fechaNacimiento = {fechaNacimiento}, celular = #{celular}, clave = #{clave}, verificado = #{verificado}
         WHERE numLicencia = #{numLicencia};
     </update>
 </mapper>

@@ -8,6 +8,9 @@ public class Vehiculo {
     private Date anio;
     private String color;
     private String numPoliza;
+    private int idAseguradora;
+    private String numLicencia;
+    private int idModelo;
 
     public Vehiculo() {
     }
@@ -18,6 +21,32 @@ public class Vehiculo {
         this.color = color;
         this.numPoliza = numPoliza;
     }
+
+    public int getIdAseguradora() {
+        return idAseguradora;
+    }
+
+    public void setIdAseguradora(int idAseguradora) {
+        this.idAseguradora = idAseguradora;
+    }
+
+    public String getNumLicencia() {
+        return numLicencia;
+    }
+
+    public void setNumLicencia(String numLicencia) {
+        this.numLicencia = numLicencia;
+    }
+
+    public int getIdModelo() {
+        return idModelo;
+    }
+
+    public void setIdModelo(int idModelo) {
+        this.idModelo = idModelo;
+    }
+    
+    
 
     public String getPlacas() {
         return placas;

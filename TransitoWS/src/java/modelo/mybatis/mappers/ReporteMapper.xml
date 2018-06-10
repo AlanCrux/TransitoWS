@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         VALUES (#{(folioReporte},#{placas},#{latitutd},#{longitud},#{nombreConductor},#{fechaHora},#{placas1});
     </insert>
     
-    <select id="obtenerReporte" parameterType="String" resultType="servicios.pojos.Reporte">
+    <select id="obtenerReporte" parameterType="String" resultType="servicios.pojos.Reporte" parameterType="String">
         SELECT * FROM Reporte
         WHERE folioReporte = #{folioReporte};
     </select>
@@ -23,4 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         nombreConductor = #{nombreConductor}, fechaHora = #{fechaHora}, placas1 = #{placas1}
         WHERE folioReporte = #{folioReporte};
     </update>
+    
+    <select id="obtenerReportes" parameterType="String" resultType="servicios.pojos.Reporte">
+        SELECT * FROM Reporte;
+    </select>
 </mapper>
